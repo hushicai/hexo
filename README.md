@@ -1,3 +1,3 @@
-# blog
+# hexo
 
-[hushicai.com](http://hushicai.com)
+hexo blog

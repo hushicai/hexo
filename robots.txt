@@ -1,4 +1,0 @@
-User-agent: *
-Disallow: /assets/
-Disallow: /page*
-Sitemap: http://hushicai.com/sitemap.xml

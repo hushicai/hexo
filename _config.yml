@@ -67,6 +67,9 @@ plugins:
 ## Themes: http://hexo.io/themes/
 theme: landscape
 
+# disqus
+disqus_shortname: hushicai
+
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:

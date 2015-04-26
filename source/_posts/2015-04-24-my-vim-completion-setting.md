@@ -41,7 +41,6 @@ let g:ycm_complete_in_comments = 1
 let g:ycm_key_list_select_completion = ['<tab>', '<c-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<c-p>', '<Up>']
 let g:ycm_confirm_extra_conf = 0
-let g:ycm_collect_identifiers_from_tags_files = 1
 ```
 
 <!-- more -->
@@ -50,27 +49,32 @@ let g:ycm_collect_identifiers_from_tags_files = 1
 
 {% asset_img 1.png %}
 
+ycm提供了一个`identifier-based
+completer`，它会收集所有当前文件或者访问过的文件中的identifiers，当你输入时，ycm会查找它们，并提供completion。
+
 路径补全：
 
 {% asset_img 2.png %}
+
+ycm提供了一个`filepath completer`来补全路径。
 
 智能补全：
 
 {% asset_img 3.png %}
 
-但是，ycm的智能补全有点问题，它只会在点号(.)之后才能开启补全，也就是说它不会补全全局预定义的变量/函数。
+ycm会为c-family语言、python等提供内置的completer，但对于javascript、php等语言，则使用vim的omnicompletion系统。
+
+如上图所示，ycm能够正常的提供completion，不过，它只会在点号(.)之后才能开启补全，也就是说它不会补全全局预定义的变量/函数。
 
 可能有人会问：第一张图中不是已经补全了吗？
 
-没错，是补全了，但那不是智能补全提供的，而是ycm内部的identifier
-completer提供的，对于在buffer中已经出现的标识符，ycm会把它们当作候选项。
+没错，是补全了，但那不是`omni completion`提供的，而是ycm的identifier completer提供的，对于在buffer中已经出现的标识符，ycm会把它们当作候选项。
 
 看一下这种情况：
 
 {% asset_img 4.png %}
 
-`document`是dom提供给javascript的全局变量，但是这里没补全，说明ycm此时没有启动omni
-completion。如果你用`<c-x><c-o>`手动触发omni completion，则可以得到补全。
+`document`是dom提供给javascript的全局变量，但是这里没补全，显然ycm此时并没有启动omni completion。如果你用`<c-x><c-o>`手动触发omni completion，则可以得到补全。
 
 {% asset_img 5.png %}
 

@@ -7,7 +7,7 @@ title: 前端志
 subtitle:
 description:
 author: hushicai
-language:
+language: zh-CN
 timezone:
 
 # URL
@@ -66,9 +66,6 @@ plugins:
   - hexo-generator-sitemap
 ## Themes: http://hexo.io/themes/
 theme: landscape
-
-# disqus
-disqus_shortname: hushicai
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html

@@ -77,7 +77,6 @@ deploy:
   repo: git@github.com:hushicai/hushicai.github.io.git
   branch: master
 
-
 feed:
     type: atom
     path: atom.xml

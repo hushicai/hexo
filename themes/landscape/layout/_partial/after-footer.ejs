@@ -1,4 +1,4 @@
-<% if (config.disqus_shortname){ %>
+<% if (config.disqus_shortname) { %>
 <script>
   var disqus_shortname = '<%= config.disqus_shortname %>';
   <% if (page.permalink){ %>
@@ -14,7 +14,7 @@
 </script>
 <% } %>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
 
 <% if (theme.fancybox){ %>
   <%- css('fancybox/jquery.fancybox') %>
@@ -22,3 +22,13 @@
 <% } %>
 
 <%- js('js/script') %>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?eebaea29f083e5cc508252c0f12389ef";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>

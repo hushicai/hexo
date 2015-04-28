@@ -18,20 +18,24 @@ s: fuck array permutation
 
 <!-- more -->
 
-现在我们就可以写一个算法：
+算法：
 
 ```text
+// 对从k到m的子数组进行排列
 perm(arr, k, m):
     if k > m
         // 递归结束，输出一个排列
         console.log(arr);
     else
         for i from k to m
-            // 先将当前数与开始的数进行交换
+            // 以arr[k]为开头的排列
+            // 先将i处的数交换到k处
+            // 那么剩下的数就为arr - {arr[k]}
             swap(arr, k, i)
-            // 剩下的数的排列
+            // 排列的问题就转换成arr[k]perm(arr, k + 1, m)
             perm(arr, k + 1, m)
-            // 恢复数组
+            // 将原来的开头的数交换回去
+            // 继续以数组下一项为开头的排列
             swap(arr, k, i)
 ```
 

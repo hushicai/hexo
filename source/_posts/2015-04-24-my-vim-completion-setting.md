@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "my vim completion setting"
+categories:
+    - vim
 tags:
     - vim
     - completion

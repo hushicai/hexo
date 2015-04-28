@@ -1,5 +1,7 @@
 title: "vim simple cursor moving"
 date: 2015-04-27 10:51:03
+categories:
+ - vim
 tags:
  - vim
  - cursor

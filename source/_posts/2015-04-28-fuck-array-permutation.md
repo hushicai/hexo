@@ -12,7 +12,7 @@ s: fuck array permutation
 
 观察以上数据，其实可以推断出，假设一组数`p = {r1, r2, r3, ..., rn}`，全排列表示为perm(p)，数组中除rn之外的数据集合表示为pn = p - {rn}。
 
-那么perm(p) = r1perm(p1), r2perm(p2), r3perm(p3), ..., rnperm(pn)，其中rnperm(pn)表示，数组第n项和剩下的数的一个排列。
+那么perm(p) = r1perm(p1), r2perm(p2), r3perm(p3), ..., rnperm(pn)。
 
 数据全部可能的排列组合就是r1perm(p1)，r2perm(p2)，....，rnperm(pn)的集合。
 

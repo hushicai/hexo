@@ -13,7 +13,7 @@ s: devtools-timeline-improvements
 
 * 集成[Javascript profiler](#Integrated_JavaScript_Profiler)（包括了火焰图表）
 * [frame viewer](#Frame_Viewer)，帮助你查看组合图层。
-* [paint profiler](#paint-profiler)，入木三分地剖析了浏览器渲染活动。
+* [paint profiler](#Paint_Profiler)，入木三分地剖析了浏览器渲染活动。
 
 注意，使用本文中描述的__Paint__捕获选项会导致一些性能负担，所以只有你需要它们的时候，才去勾选它们。
 

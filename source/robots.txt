@@ -1,3 +1,2 @@
 User-agent: *
-Disallow: /page*
 Sitemap: http://hushicai.com/sitemap.xml

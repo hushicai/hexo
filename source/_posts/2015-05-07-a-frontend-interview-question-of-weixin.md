@@ -159,4 +159,65 @@ LazyMan('Hank').sleepFirst(5).eat('breadfast').sleep(5).eat('lunch').sleep(5).ea
 
 print是用来取出最后一个promise的消息。
 
+当然也可以用[async](https://github.com/caolan/async)来做。
+
+```javascript
+function createWaitFunc(second) {
+    return function (callback) {
+        setTimeout(function () {
+            console.log('Wake up after ' + second);
+            callback(null);
+        }, second * 1000);
+    }
+}
+
+function LazyMan(name) {
+    // var async = require('async');
+    var chain = [];
+    chain.push(
+        function (callback) {
+            console.log('Hi! This is ' + name + '!');
+            callback(null);
+        }
+    );
+    setTimeout(function () {
+        var async = require('async');
+        async.series(chain);
+    }, 0);
+
+    return {
+        sleep: function (second) {
+            chain.push(
+                createWaitFunc(second)
+            );
+            return this;
+        },
+        sleepFirst: function (second) {
+            chain.unshift(
+                createWaitFunc(second)
+            );
+            return this;
+        },
+        eat: function (part) {
+            chain.push(
+                function (callback) {
+                    console.log('Eat ' + part + '~');
+                    callback(null);
+                }
+            );
+            return this;
+        }
+    };
+}
+
+exports.LazyMan = LazyMan;
+```
+
+测试：
+
+```javascript
+var LazyMan = require('./LazyMan');
+LazyMan('Hank').sleepFirst(5).eat('breadfast').sleep(5).eat('lunch').sleep(5).eat('dinner');
+```
+
 以上测试都在nodejs环境跑，欢迎拍砖~！

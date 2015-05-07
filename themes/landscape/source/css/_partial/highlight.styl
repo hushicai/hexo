@@ -1,162 +1,198 @@
-// https://github.com/chriskempson/tomorrow-theme
-highlight-background = #272822
-highlight-current-line = #3E3D32
-highlight-selection = #49483E
-highlight-foreground = #F8F8F2
-highlight-comment = #75715E
-highlight-red = #F92672
-highlight-orange = #FD971F
-highlight-yellow = #E6DB74
-highlight-green = #A6E22E
-highlight-aqua = #A1EFE4
-highlight-blue = #66D9EF
-highlight-purple = #AE81FF
-
-$code-block
-  background: highlight-background
-  margin: 0 article-padding * -1
-  padding: 15px article-padding
-  border-style: solid
-  border-color: color-border
-  border-width: 1px 0
-  overflow: auto
-  color: highlight-foreground
-  line-height: font-size * line-height
-
-$line-numbers
-  color: #666
-  font-size: 0.85em
-
 .article-entry
-  pre, code
-    font-family: font-mono
   code
-    background: #f0f0f0
-    text-shadow: 0 1px #fff
-    font-size:  0.85em
-    padding: 0 0.3em
-    border: 1px solid #dcdcdc
-    border-radius: 3px
-  pre
-    @extend $code-block
-    code
-      background: none
-      text-shadow: none
-      padding: 0
-      border: none
-  .highlight
-    @extend $code-block
-    pre
-      border: none
-      margin: 0
-      padding: 0
-    table
-      margin: 0
-      width: auto
-    td
-      border: none
-      padding: 0
-    figcaption
-      clearfix()
-      font-size: 0.85em
-      color: highlight-comment
-      line-height: 1em
-      margin-bottom: 1em
-      a
-        float: right
-    .gutter pre
-      @extend $line-numbers
-      text-align: right
-      padding-right: 20px
-    .line
-      height: font-size * line-height
+    border 1px solid color-border
+    border-radius 2px
+    color color-link
+    margin:0 2px
+    padding:0 2px
+    font-family: font-mono
+    white-space:nowrap
   .gist
-    margin: 0 article-padding * -1
-    border-style: solid
-    border-color: color-border
-    border-width: 1px 0
-    background: highlight-background
-    padding: 15px article-padding 15px 0
+    background #fff
+    border 1px solid color-border
+    margin-top 15px
+    padding 0
+    border-radius 2px
+    text-shadow 0 0 1px #fff
+    line-height 1.6
+    overflow auto
+    color #666
+    .line-numbers
+      font-family font-mono
+      text-align center
+      background none
     .gist-file
-      border: none
-      font-family: font-mono
-      margin: 0
+      border none
+      font-family inherit
+      margin 0
+      font-size 0.9em
       .gist-data
-        background: none
-        border: none
-        .line-numbers
-          @extend $line-numbers
-          background: none
-          border: none
-          padding: 0 20px 0 0
-        .line-data
-          padding: 0 !important
-      .highlight
-        margin: 0
-        padding: 0
-        border: none
+        background none
+        border-bottom none
+        table
+          margin 0 0
+        pre
+          padding 0 !important
+          font-family font-mono
+
       .gist-meta
-        background: highlight-background
-        color: highlight-comment
-        font: 0.85em font-sans
-        text-shadow: 0 0
-        padding: 0
-        margin-top: 1em
-        margin-left: article-padding
+        background none
+        color color-meta
+        margin 5px 15px
+        padding 0
+        text-shadow 0 0 1px #fff
+        font-size 100%
         a
-          color: color-link
-          font-weight: normal
-          &:hover
-            text-decoration: underline
+          color color-main01
+          &:visited
+            color color-main01
+
+figure.highlight
+  margin-left 0px
+  margin-right 0px
+  background #fff
+  border 1px solid color-border
+  margin-top 15px
+  padding 0
+  border-radius 2px
+  line-height 1.6
+  overflow auto
+  position relative
+  font-size 0.9em
+  font-family: font-mono
+  figcaption
+    color color-meta
+    text-align center
+    background-color #ece9e9
+    a
+      position absolute
+      right 15px
+
+  pre
+    border none
+    padding 0
+    margin 0
+
+  table
+    margin 0
+    border-spacing 0
+    td
+      border 0
+
+  .gutter
+    width 40px 
+    color color-meta
+    padding 0
+    border-right 1px solid color-border
+    text-align center
+    .line
+      padding: 0 4px 0 4px
+
+  .code
+    padding-left 15px
+    border-left 1px solid #fff
+    color #666
+
+  .line
+    height: 20px
 
 pre
-  .comment
-  .preprocessor
-    color: highlight-comment
-  .tag
-    color: highlight-foreground
-  .title
-  .variable
-  .regexp
+  // Theme: github.com style (c) Vasily Polovnyov <vast@whiteants.net>
+  // https://highlightjs.org/static/styles/github.css
+  .comment,
+  .template_comment,
+  .diff .header,
+  .javadoc
+    color #998
+    font-style italic
+
+  .keyword,
+  .css .rule .keyword,
+  .winutils,
+  .javascript .title,
+  .nginx .title,
+  .subst,
+  .request,
+  .status
+    color #333
+    font-weight bold
+
+  .number,
+  .hexcolor,
   .ruby .constant
-  .xml .tag .title
-  .xml .pi
-  .xml .doctype
-  .html .doctype
-  .css .id
-  .css .class
-  .css .pseudo
-    color: highlight-red
-  .number
+    color #008080
+
+  .string,
+  .tag .value,
+  .phpdoc,
+  .dartdoc,
+  .tex .formula
+    color #d14
+
+  .title,
+  .id,
+  .scss .preprocessor
+    color #900
+    font-weight bold
+
+  .javascript .title,
+  .list .keyword,
+  .subst
+    font-weight normal
+
+  .class .title,
+  .type,
+  .vhdl .literal,
+  .tex .command
+    color #458
+    font-weight bold
+
+  .tag,
+  .tag .title,
+  .rules .property,
+  .django .tag .keyword
+    color #000080
+    font-weight normal
+
+  .attribute,
+  .variable,
+  .lisp .body
+    color #008080
+
+  .regexp
+    color #009926
+
+  .symbol,
+  .ruby .symbol .string,
+  .lisp .keyword,
+  .clojure .keyword,
+  .scheme .keyword,
+  .tex .special,
+  .prompt
+    color #990073
+
   .built_in
-  .literal
-  .constant
-    color: highlight-purple
-  .params
-    color: highlight-orange
-  .class
-  .ruby .class .title
-  .css .rules .attribute
-  .attribute
-    color: highlight-green
-  .string
-  .value
-  .inheritance
-  .header
-  .ruby .symbol
-  .xml .cdata
-    color: highlight-yellow
-  .css .hexcolor
-    color: highlight-aqua
-  .function
-  .python .decorator
-  .python .title
-  .ruby .function .title
-  .ruby .title .keyword
-  .perl .sub
-  .javascript .title
-  .coffeescript .title
-    color: highlight-blue
-  .keyword
-  .javascript .function
-    color: highlight-blue
+    color #0086b3
+
+  .preprocessor,
+  .pragma,
+  .pi,
+  .doctype,
+  .shebang,
+  .cdata
+    color #999
+    font-weight bold
+
+  .deletion
+    background #fdd
+
+  .addition
+    background #dfd
+
+  .diff
+    .change
+      background #0086b3
+
+  .chunk
+    color #aaa
+

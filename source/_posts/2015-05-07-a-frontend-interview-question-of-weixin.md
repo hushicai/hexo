@@ -4,7 +4,7 @@ tags:
 s: a frontend interview question of weixin
 ---
 
-最近听说了一道微信前端面试题，内容大概如下：
+今天听说了一道微信的前端面试题，内容大概如下：
 
 > 实现一个LazyMan，可以按照以下方式调用:
 > LazyMan("Hank")输出:
@@ -97,7 +97,7 @@ var LazyMan = require('./LazyMan');
 LazyMan('Hank').sleepFirst(10).eat('breadfast').sleep(5).eat('lunch').sleep(10).eat('dinner');
 ```
 
-另外的做法就使用Promise。
+该问题也可以使用Promise来解决。
 
 ```javascript
 function createWaitPromise(second) {

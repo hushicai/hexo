@@ -29,7 +29,7 @@ s: a frontend interview question of weixin
 > 
 > 以此类推。
 
-咦，似曾相识耶，貌似是经典的异步编程问题。
+这题目我觉得挺有意思的，晚上下班回来就折腾了一下。
 
 <!-- more -->
 

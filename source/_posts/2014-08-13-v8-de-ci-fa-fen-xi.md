@@ -21,14 +21,14 @@ Utf16CharacterStream* stream_;
 
 这是个啥玩意？看一下源代码中对这个类的解释：
 
-    // Buffered stream of UTF-16 code units, using an internal UTF-16 buffer.
+> // Buffered stream of UTF-16 code units, using an internal UTF-16 buffer.
 
 大概就是说，`Utf16CharacterStream`就是一个__UTF-16代码单元__的缓冲流。
 
 啥是__代码单元__？v8的解释如下：
 
-    // A code unit is a 16 bit value representing either a 16 bit code point
-    // or one part of a surrogate pair that make a single 21 bit code point.
+> // A code unit is a 16 bit value representing either a 16 bit code point
+> // or one part of a surrogate pair that make a single 21 bit code point.
 
 这就涉及到了unicode规范，在unicode字符集中，每个unicode字符都有一个唯一的__代码点__。
 
@@ -46,17 +46,17 @@ Utf16CharacterStream* stream_;
 
 综上，我们可以知道`Utf16CharacterStream`中每一个UTF-16代码单元的含义：
 
-    UTF-16中，一个代码单元要么是一个16位的代码点，要么是“Unicode代理对”中的一半，其中“unicode代码对”是一个21位的代码点。
+> UTF-16中，一个代码单元要么是一个16位的代码点，要么是“Unicode代理对”中的一半，其中“unicode代码对”是一个21位的代码点。
 
 简而言之，`Utf16CharacterStream`中的每个代码单元，要么是一个独立的unicode字符，要么是一个unicode字符的一半（和下一个代码单元组合起来才能形成一个unicode字符）。
 
 v8实际上就是基于utf16对输入字符序列进行词法分析的！这也是Ecmascript规范所要求的：
 
-    ECMAScript 源代码文本使用 Unicode 3.0 或更高版本的字符编码的字符序列来表示。
-    符合 ECMAScript 的实现不要求对文本执行正规化，也不要求将其表现为像执行了正规化一样。
-    本规范的目的是假定 ECMAScript 源代码文本都是由16位代码单元组成的序列。
-    像这样包含16位代码单元序列的源文本可能不是有效的 UTF-16 字符编码。
-    如果实际源代码文本没有用16位代码单元形式的编码，那就必须把它看作已经转换为 UTF-16 一样处理。
+> ECMAScript 源代码文本使用 Unicode 3.0 或更高版本的字符编码的字符序列来表示。
+> 符合 ECMAScript 的实现不要求对文本执行正规化，也不要求将其表现为像执行了正规化一样。
+> 本规范的目的是假定 ECMAScript 源代码文本都是由16位代码单元组成的序列。
+> 像这样包含16位代码单元序列的源文本可能不是有效的 UTF-16 字符编码。
+> 如果实际源代码文本没有用16位代码单元形式的编码，那就必须把它看作已经转换为 UTF-16 一样处理。
 
 v8词法分析首先要做的是把输入字符序列转换成utf16 stream。
 

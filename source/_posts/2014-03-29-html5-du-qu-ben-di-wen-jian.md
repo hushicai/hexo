@@ -44,7 +44,7 @@ function isSupportFileApi() {
 
 运行此示例：
 
-<div class="example">
+<pre class="article-example">
 <input type="button" value="检测" onclick="checkFileApi()" />
 <script type="text/javascript">
 function isSupportFileApi() {
@@ -61,7 +61,7 @@ function checkFileApi() {
     alert('不支持File Api!');
 }
 </script>
-</div>
+</pre>
 
 HTML5虽然可以让我们访问本地文件系统，但是js只能被动地读取，也就是说只有用户主动触发了文件读取行为，js才能访问到`File
 Api`，这通常发生在__表单选择文件__或者__拖拽文件__。
@@ -90,7 +90,7 @@ document.getElementById('file1').onchange = fileSelect1;
 
 运行此示例：
 
-<div class="example">
+<pre class="article-example">
 <p><input type="file" id="file1" multiple /></p>
 <div id="list1"></div>
 <script type="text/javascript">
@@ -113,7 +113,7 @@ if(isSupportFileApi()) {
 }
 })();
 </script>
-</div>
+</pre>
 
 ### 拖拽
 
@@ -149,7 +149,7 @@ drag.addEventListener('dragover', dragOverHandler, false);
 
 运行此示例：
 
-<div class="example">
+<pre class="article-example">
 <div id="drag" style="font-size:20px;padding:25px;border:1px dashed #666;text-align:center;color:#bbb;margin-bottom:10px">将文件拖到此处</div>
 <div id="list2"></div>
 <script type="text/javascript">
@@ -182,7 +182,7 @@ if(isSupportFileApi()) {
 }
 })();
 </script>
-</div>
+</pre>
 
 _PS:
 拖拽有个特别需要注意的事情就是，阻止事件冒泡和事件默认行为，防止浏览器自动打开文件等行为，比如拖拽一个pdf，浏览器可能会打开pdf。_
@@ -238,7 +238,7 @@ document.getElementById('files2').addEventListener('change', fileSelect2, false)
 
 运行此示例：
 
-<div class="example">
+<pre class="article-example">
 <p><input type="file" id="files2" accept="image/*" multiple  /></p>   
 <div id="preview2"></div>
 <script type="text/javascript">
@@ -267,7 +267,7 @@ document.getElementById('files2').addEventListener('change', fileSelect2, false)
     }
 })();
 </script>
-</div>
+</pre>
 
 调用FileReader的readAsDataURL接口时，浏览器将异步读取文件内容，通过给FileReader实例监听一个onload事件，数据加载完毕后，在onload事件处理中，通过reader的result属性即可获得文件内容。
 
@@ -302,7 +302,7 @@ document.getElementById('files3').addEventListener('change', fileSelect3, false)
 
 运行此示例：
 
-<div class="example">
+<pre class="article-example">
 <input type="file" id="files3" accept="text/*" multiple />
 <div id="preview3"></div>
 <script type="text/javascript">
@@ -341,7 +341,7 @@ if(isSupportFileApi()) {
 }
 })();
 </script>
-</div>
+</pre>
 
 _PS：由于需要在页面上预览文本，所以则需要对文件中的html特殊字符进行实体编码，避免浏览器解析文件中的html代码。_
 
@@ -400,7 +400,7 @@ input4.onchange = fileSelect4;
 
 运行此示例：
 
-<div class="example">
+<pre class="article-example">
 <p><input id="file4" type="file" /></p>
 <div id="progress-bar" style="border:1px solid #333;padding:5px;color:#fff;display:none;">
     <div style="width:0%;height:100%;background:blue;white-space:nowrap;" id="progress"></div>
@@ -447,7 +447,7 @@ if(isSupportFileApi()) {
 }
 })();
 </script>
-</div>
+</pre>
 
 
 ## 分割文件
@@ -502,7 +502,7 @@ document.getElementById('file5').onchange = function() {
 
 运行此示例：（读取10 ~ 100字节）
 
-<div class="example">
+<pre class="article-example">
 <input type="file" id="file5" />
 <div id="range"></div>
 <div id="content"></div>
@@ -549,7 +549,7 @@ if(isSupportFileApi()) {
 }
 })();
 </script>
-</div>
+</pre>
 
 本例使用了FileReader的onloadend事件来检测读取成功与否，如果用onloadend则必须检测一下FileReader的readyState，因为read abort时也会触发onloadend事件，如果我们采用onload，则可以不用检测readyState。
 
@@ -623,7 +623,7 @@ input6.onchange = fileSelect6
 
 运行此示例：（提示：请选择一个1G以上文件）
 
-<div class="example">
+<pre class="article-example">
 <p><input type="file" id="file6" /></p>
 <div id="progress-bar2" style="border:1px solid #333;padding:5px;color:#fff;display:none;">
     <div style="width:0%;height:100%;background:blue;white-space:nowrap;" id="progress2"></div>
@@ -684,7 +684,7 @@ if(isSupportFileApi()) {
 }
 })();
 </script>
-</div>
+</pre>
 
 ## 注意事项
 

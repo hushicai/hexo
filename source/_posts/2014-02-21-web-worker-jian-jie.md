@@ -122,7 +122,7 @@ self.addEventListener('message', function(e) {
 
 **示例**：运行此Worker！
 
-<div class="example">
+<pre class="article-example">
     <button onclick="sayHI()">打招呼</button>
     <button onclick="sayBalala()">随便说一句</button>
     <button onclick="sayBye()">停止</button>
@@ -153,7 +153,7 @@ self.addEventListener('message', function(e) {
             document.getElementById('result').innerHTML = e.data;
         }, false);
     </script>
-</div>
+</pre>
 
 ## 后记
 

@@ -63,7 +63,7 @@ quicksort([3,2,12,6,7,9,6,10,2,4,5]);
 
 运行此示例：
 
-<div class="example">
+<pre class="article-example">
 <button id="quicksort1">快速排序</button>
 <div id="quicksort1-result"></div>
 <script type="text/javascript">
@@ -97,7 +97,7 @@ quicksort([3,2,12,6,7,9,6,10,2,4,5]);
         }
     );
 </script>
-</div>
+</pre>
 
 但是很显然，这种方法比较浪费存储空间，所以就有人提出了原地分区（in-place partition），伪代码如下：
 
@@ -166,8 +166,7 @@ qsort([3,2,12,6,7,9,6,10,2,4,5]);
 ```
 
 运行此示例：
-
-<div class="example">
+<pre class="article-example">
 <button id="quicksort2">快速排序</button>
 <div id="quicksort2-result"></div>
 <script type="text/javascript">
@@ -189,7 +188,7 @@ qsort([3,2,12,6,7,9,6,10,2,4,5]);
             swap(arr, low, high);
             high--;
         }
-        
+
         return low;
     }
     // 快排
@@ -213,4 +212,5 @@ qsort([3,2,12,6,7,9,6,10,2,4,5]);
         }
     );
 </script>
-</div>
+</pre>
+

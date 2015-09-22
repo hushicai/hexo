@@ -26,14 +26,14 @@ jquery动画很强大，它有一个很强大的特性：__动画队列__，比�
 
 <p>示例：运行一下</p>
 
-<div class="example">
+<pre class="article-example">
     <button id="animation-test">test</button>
     <script>
         $('#animation-test').click(function() {
            $(this).animate({width: 200}).animate({opacity: 0.5});
         });
     </script>
-</div>
+</pre>
 
 可以看到，该按钮的动画按照调用`animate`的顺序播放了！
 

@@ -32,7 +32,7 @@ button.onclick = start;
 
 <!-- more -->
 
-<div class="example">
+<pre class="article-example">
     <button id="test" style="width: 100px">test</button>
     <script type="text/javascript">
         var interval = null;
@@ -51,7 +51,7 @@ button.onclick = start;
         }
         button.onclick = start;
     </script>
-</div>
+</pre>
 
 但是这种实现方法并不具备一般性，比如不好应用线性、淡入、淡出等缓动函数，更具一般性的动画应该具备以下元素：
 
@@ -111,7 +111,7 @@ button2.onclick = move;
 ```
 运行此示例：
 
-<div class="example">
+<pre class="article-example">
     <button id="test2" style="width:100px;">test2</button>
     <script type="text/javascript">
         function animate(options) {
@@ -155,6 +155,6 @@ button2.onclick = move;
             });
         }
     </script>
-</div>
+</pre>
 
 ok，到此我们就完成了一个动画库的雏形，在实际应用中，还有不少细节需要完成，比如动画队列、自动计算初始样式值等。

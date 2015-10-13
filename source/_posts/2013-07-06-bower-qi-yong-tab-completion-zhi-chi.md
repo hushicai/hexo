@@ -17,33 +17,35 @@ bower提供的功能很多，支持`search`、`init`、`link`等，具体详解b
 安装`bower`的时候，并不支持tab
 completion，那怎么办？在命令行上直接执行`bower`看看：
 
-     Usage:
+```bash
+Usage:
 
-        bower <command> [<args>] [<options>]
+    bower <command> [<args>] [<options>]
 
-    Commands:
+Commands:
 
-        cache-clean    Clean the Bower cache, or the specified package caches
-        completion     Tab Completion for Bower
-        help           Display help information about Bower
-        info           Version info and description of a particular package
-        init           Interactively create a bower.json file
-        install        Install a package locally
-        link           Symlink a package folder
-        list, ls       List all installed packages
-        lookup         Look up a package URL by name
-        register       Register a package
-        search         Search for a package by name
-        uninstall      Remove a package
-        update         Update a package
+    cache-clean    Clean the Bower cache, or the specified package caches
+    completion     Tab Completion for Bower
+    help           Display help information about Bower
+    info           Version info and description of a particular package
+    init           Interactively create a bower.json file
+    install        Install a package locally
+    link           Symlink a package folder
+    list, ls       List all installed packages
+    lookup         Look up a package URL by name
+    register       Register a package
+    search         Search for a package by name
+    uninstall      Remove a package
+    update         Update a package
 
-    Options:
+Options:
 
-        --no-color - Do not print colors (available in all commands)
-       --quiet    - Suppress all output except for warnings and errors (available in all commands)
-        --silent   - Suppress all output (available in all commands)
+    --no-color - Do not print colors (available in all commands)
+   --quiet    - Suppress all output except for warnings and errors (available in all commands)
+    --silent   - Suppress all output (available in all commands)
 
-    See 'bower help <command>' for more information on a specific command.
+See 'bower help <command>' for more information on a specific command.
+```
 
 看到其中的`completion`顿时来了精神，再在命令行下执行:
 

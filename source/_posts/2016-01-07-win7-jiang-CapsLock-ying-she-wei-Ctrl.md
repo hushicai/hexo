@@ -2,6 +2,9 @@ title: win7将CapsLock映射为Ctrl
 s: win7 jiang CapsLock ying she wei Ctrl
 date: 2016-01-07 23:52:13
 tags:
+- windows
+- Caps Lock
+- Ctrl
 ---
 
 从狼厂离职之后,没有了mac,一直在用windows系统,以sublime作为开发工具.

@@ -88,20 +88,26 @@ function constructSSE(res, id, data) {
 
 `EventSource`的`content-type`是`text/event-stream`，数据传输格式：
 
+```text
     data: xxxxxxx\n\n
+```
 
 多行的数据：
 
+```text
     data: xxxxxxxx\n
     data: xxxxxxxx\n\n
+```
 
 最后一行使用两个`\n`。
 
 我们可以使用`EventSource`传输json格式数据：
 
+```text
     data: {\n
     data: "name": "hushicai"\n
     data: }\n\n
+```
 
 客户端接收到数据后，可以调用`JSON.parse`解析出json数据。
 

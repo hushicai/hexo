@@ -25,8 +25,10 @@ ls -l
 
 列出该目录，可以看到类似如下内容：
 
+```text
     -rw-r--r--    1 root  wheel     47315  6 15 15:48 com.codeius.izip.bom
     -rw-r--r--    1 root  wheel       253  6 15 15:48 com.codeius.izip.plist
+```
 
 找到.bom文件后，我们就可以使用以下命令找到安装的文件列表：
 
@@ -38,6 +40,7 @@ lsbom -pf com.codeius.izip.bom
 
 <!-- more -->
 
+```text
     /iZip.app
     ./iZip.app/Contents
     ./iZip.app/Contents/CodeResources
@@ -76,6 +79,7 @@ lsbom -pf com.codeius.izip.bom
     ./iZip.app/Contents/PkgInfo
     ./iZip.app/Contents/Resources
     ...
+```
 
 以上找到的这些文件，就是安装pkg的时候产生的文件，这些文件删除了**应该**就ok了！
 
@@ -91,12 +95,14 @@ man pkgutil # 或者直接pkgutil
 
 看看有啥功能我们能用的:
 
+```text
     Receipt Database Commands:
       --pkgs, --packages     List all currently installed package IDs on --volume
       --pkgs-plist           List all package IDs on --volume in plist format
       ...
       --files PKGID          List files installed by the specified package
       ...
+```
 
 我们先找一下我们要删除的pkg包名（以上述iZip为例）：
 
@@ -106,7 +112,9 @@ pkgutil --pkgs | grep -i izip
 
 看一下输出了啥：
 
+```text
     com.codeius.izip
+```
 
 ok，现在就可以找出izip pkg到底装了哪些文件：
 
@@ -116,6 +124,7 @@ pkgutil --file com.codeius.izip
 
 终端输出的结果：
 
+```text
     iZip.app
     iZip.app/Contents
     iZip.app/Contents/CodeResources
@@ -154,6 +163,7 @@ pkgutil --file com.codeius.izip
     iZip.app/Contents/PkgInfo
     iZip.app/Contents/Resources
     ...
+```
 
 把这些文件删了应该就算卸载完毕。（risk on your own!）
 
@@ -161,4 +171,4 @@ pkgutil --file com.codeius.izip
 
 哈哈，有的人要讲究效率，不喜欢折腾半天，就会问能不能一键搞定啊？
 
-真别说，还真有[http://www.corecode.at/uninstallpkg/](http://www.corecode.at/uninstallpkg/)，偶然发现这个东西，貌似不错，试用了一下，好像真成功卸载了。（就是不知道有没有卸载干净...）
+真别说，还真有[http://www.corecode.at/uninstallpkg/](http://www.corecode.at/uninstallpkg/)，偶然发现这个东西，貌似不错，试用了一下，好像真成功卸载了。（就是不知道有没有卸载干净）

@@ -30,5 +30,7 @@ description: ""
 
 如果我们直接增加一个URL参数为a.html，IE会很奇葩地认为这是一个HTML文件而忽略content-type，使用HTML来解析文件，比如这样：
 
+```text
     foo.cgi?id=123&a.html
     /index.php/a.html?id=123（mvc单点入口，会忽略a.html，直接请求index.php）
+```

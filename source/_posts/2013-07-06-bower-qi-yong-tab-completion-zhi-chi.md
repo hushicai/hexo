@@ -17,7 +17,7 @@ bower提供的功能很多，支持`search`、`init`、`link`等，具体详解b
 安装`bower`的时候，并不支持tab
 completion，那怎么办？在命令行上直接执行`bower`看看：
 
-```bash
+```text
 Usage:
 
     bower <command> [<args>] [<options>]
@@ -49,15 +49,19 @@ See 'bower help <command>' for more information on a specific command.
 
 看到其中的`completion`顿时来了精神，再在命令行下执行:
 
+```bash
     bower completion
+```
 
 看一下输出的内容：
 
+```text
     ###-begin-bower-completion-###
     #
     # Installation: bower completion >> ~/.bashrc  (or ~/.zshrc)
     # Or, maybe: bower completion > /usr/local/etc/bash_completion.d/bower
     #
+```
 
 哈哈，走到这里，都应该知道怎么添加tab completion支持了吧！！！
 

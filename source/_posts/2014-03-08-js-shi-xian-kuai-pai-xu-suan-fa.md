@@ -17,6 +17,7 @@ description: ""
 
 在简单的伪代码中，此算法可简单地表示为：
 
+```text
      function quicksort(q)
          var list less, pivotList, greater
          if length(q) ≤ 1 {
@@ -29,6 +30,7 @@ description: ""
             add pivot to pivotList
             return concatenate(quicksort(less), pivotList, quicksort(greater))
          }
+```
 
 
 参考以上伪代码，js可以这么实现快排：
@@ -101,6 +103,7 @@ quicksort([3,2,12,6,7,9,6,10,2,4,5]);
 
 但是很显然，这种方法比较浪费存储空间，所以就有人提出了原地分区（in-place partition），伪代码如下：
 
+```text
      function partition(a, left, right, pivotIndex)
           pivotValue := a[pivotIndex]
           swap(a[pivotIndex], a[right])
@@ -110,18 +113,21 @@ quicksort([3,2,12,6,7,9,6,10,2,4,5]);
                   swap(a[storeIndex], a[i])
                   storeIndex := storeIndex + 1
                   z
-          swap(a[right], a[storeIndex]) 
+          swap(a[right], a[storeIndex])
           return storeIndex
- 
+
+```
 
 有了以上分区算法，就可以这么写快排：
 
+```text
      procedure quicksort(a, left, right)
           if right > left
               select a pivot value a[pivotIndex]
               pivotNewIndex := partition(a, left, right, pivotIndex)
               quicksort(a, left, pivotNewIndex-1)
               quicksort(a, pivotNewIndex+1, right)
+```
 
 这种方式下，js可以这么实现快排：
 

@@ -8,6 +8,7 @@ description: ""
 
 如果我们在某个目录中删除了一些已经在svn版本库中的文件或者目录，但是还没commit，`svn status`查看一下状态：
 
+```bash
     !   x/xx
     !   x/xx/x.js
     !   x/xx/x.css
@@ -15,6 +16,7 @@ description: ""
     ?   x/xx/x.jpg  ## 其他状态的文件
     M   x/xx/xx.js  ## 其他状态的文件
     ...
+```
 
 现在我们想`svn delete`一下带"!"状态的文件或者目录，如果被删除的数量不多，我们当然可以挨个`svn delete`。
 
@@ -26,6 +28,7 @@ svn status | grep ! | awk '{print $2}' | xargs svn delete
 
 再`svn status`一下，可以看到：
 
+```bash
     D   x/xx
     D   x/xx/x.js
     D   x/xx/x.css
@@ -33,5 +36,6 @@ svn status | grep ! | awk '{print $2}' | xargs svn delete
     ?   x/xx/x.jpg 
     M   x/xx/xx.js
     ...
+```
 
 已经成功`delete`了，再`commit`一下就搞定了！

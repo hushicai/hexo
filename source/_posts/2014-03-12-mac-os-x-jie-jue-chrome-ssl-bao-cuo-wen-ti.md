@@ -16,18 +16,22 @@ description: ""
 
 依稀记得在windows系统上可以为chrome添加一个启动参数来忽略ssl错误：
 
+```text
     --ignore-certificate-errors
+```
 
 那么mac系统上怎么添加呢？用mac的人应该都知道可以用`open`可以从命令行打开mac的应用程序。
 
 查看了一下`open`的帮助文档，发现了以下有用的信息：
 
+```text
     -a application
         Specifies the application to use for opening the file
 
     --args
         All remaining arguments are passed to the opened application in the argv parameter to main().  
         These arguments are not opened or interpreted by the open tool.
+```
 
 <!-- more -->
 

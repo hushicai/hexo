@@ -37,7 +37,9 @@ description: ""
 
 然后加载：
 
-    launchctl load /Library/LaunchDaemons/nginx.plist
+```bash
+launchctl load /Library/LaunchDaemons/nginx.plist
+```
 
 这样就大功告成了！
 

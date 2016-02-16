@@ -284,19 +284,21 @@ return Token::IDENTIFIER;
 
 最后，对整个文件内容扫描完的结果大概就类似这样：
 
-    No of tokens: 12
-    =>    FUNCTION at (0, 8)
-    =>  IDENTIFIER at (9, 11)
-    =>      LPAREN at (11, 12)
-    =>      RPAREN at (12, 13)
-    =>      LBRACE at (14, 15)
-    =>         VAR at (20, 23)
-    =>  IDENTIFIER at (24, 26)
-    =>      ASSIGN at (27, 28)
-    =>      STRING at (29, 41)
-    =>   SEMICOLON at (41, 42)
-    =>      RBRACE at (43, 44)
-    =>         EOS at (45, 45)
+```text
+No of tokens: 12
+=>    FUNCTION at (0, 8)
+=>  IDENTIFIER at (9, 11)
+=>      LPAREN at (11, 12)
+=>      RPAREN at (12, 13)
+=>      LBRACE at (14, 15)
+=>         VAR at (20, 23)
+=>  IDENTIFIER at (24, 26)
+=>      ASSIGN at (27, 28)
+=>      STRING at (29, 41)
+=>   SEMICOLON at (41, 42)
+=>      RBRACE at (43, 44)
+=>         EOS at (45, 45)
+```
 
 
 在utf8编码的情况下，v8整个词法分析过程，大概就是这样，当然实际过程中，还有很多细节问题需要处理，比如跳过js注释、html注释

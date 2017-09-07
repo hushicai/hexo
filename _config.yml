@@ -62,8 +62,8 @@ pagination_dir: page
 # Extensions
 ## Plugins: http://hexo.io/plugins/
 plugins:
-  - hexo-generator-feed
-  - hexo-generator-sitemap
+  hexo-generator-feed
+  hexo-generator-sitemap
 ## Themes: http://hexo.io/themes/
 theme: landscape
 
@@ -75,6 +75,6 @@ deploy:
   branch: master
 
 feed:
-    type: atom
-    path: atom.xml
-    limit: 20
+  type: atom
+  path: atom.xml
+  limit: 20

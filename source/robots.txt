@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: http://hushicai.com/sitemap.xml
+Sitemap: http://hushicai.github.io/sitemap.xml

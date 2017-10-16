@@ -1,3 +1,4 @@
 # blog
 
-[hushicai.com](http://hushicai.com)
+my blog
+
